@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+      "sourceMap": true,
+      "module": "commonjs",
+      "target": "es5",
+      "allowJs": true,
+      "strictNullChecks": true,
+      "noImplicitAny": true,
+      "suppressImplicitAnyIndexErrors": true,
+      "typeRoots": [
+          "node_modules/@types"
+      ]
+  },
+  "exclude": [
+      "dist",
+      "node_modules"
+  ],
+  "lib": [
+      "es2017",
+      "dom"
+  ]
+}
