@@ -8,8 +8,12 @@ const TSLintPlugin = require('tslint-webpack-plugin');
 
 
 var isProduction = false;
+var isServeMode = false;
 if (process.argv.indexOf('--production') > -1) {
     isProduction = true;
+}
+if (process.argv.indexOf('serve') > -1) {
+    isServeMode = true;
 }
 
 var config = {
@@ -46,9 +50,10 @@ var config = {
         })
     ],
     optimization: {
-        splitChunks: { 
+        splitChunks: {
         }
     }
+  
 };
 if (isProduction) {
     console.log(chalk.yellow("Webpack: Building production code"));
@@ -56,6 +61,13 @@ if (isProduction) {
     config.optimization = {
         minimizer: [new UglifyJsPlugin()],
     };
+} else if (isServeMode) {
+    console.log(chalk.yellow("Webpack: Building development code"));
+    config.watch =true;
+    config.watchOptions = {
+        poll: 1000 // Check for changes every second
+    };
+    config.mode = 'development';
 } else {
     console.log(chalk.yellow("Webpack: Building development code"));
     config.mode = 'development';

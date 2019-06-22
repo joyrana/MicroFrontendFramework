@@ -6,7 +6,7 @@ export class BasicApp extends HTMLElement {
     super();
   }
   connectedCallback() {
-    this.innerHTML = 'Welcome to Micro Frontend Framework !!';
+    this.innerHTML = 'Welcome to Micro Frontend Framework!!';
     // here the element has been inserted into the DOM
   }
   attributeChangedCallback(attr: any, oldVal: any, newVal: any) {

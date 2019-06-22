@@ -1,14 +1,18 @@
-# Micro Frontend Framework
+## Micro Frontend Framework
 
 
-Building the code
+### Building the code
+
+```bash
 git clone the repo
 npm i
 npm i -g gulp
 gulp serve
+```
 
-Dev Build: gulp build
-TODO - Change the script references
-Production build: gulp build --production
-TODO - Change the script references
+### Build options
 
+gulp clean - For clean up
+gulp serve - For seving in local browser
+gulp build - For development build
+gulp build --production - For production build
